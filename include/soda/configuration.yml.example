@@ -1,0 +1,14 @@
+# Configuration de la source de données pour Soda
+# Copiez ce fichier vers 'configuration.yml' et remplissez les variables dans votre .env
+
+data_source chicago_crimes:
+  type: postgres
+  host: ${POSTGRES_HOST}
+  port: ${POSTGRES_PORT}
+  username: ${POSTGRES_USER}
+  password: ${POSTGRES_PASSWORD}
+  database: ${POSTGRES_DB}
+  schema: public
+  # Optionnel : nécessaire pour certaines bases Render si SSL est forcé
+  connection_timeout: 30
+  ssl: true

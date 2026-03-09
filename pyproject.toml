@@ -1,0 +1,14 @@
+[project]
+name = "brief-4-chicago-regular-girls"
+version = "0.1.0"
+description = "Pipeline Airflow pour les crimes de Chicago avec Soda et Postgres sur Render"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-airflow-providers-http>=6.0.0",
+    "apache-airflow-providers-postgres>=6.6.0",
+    "pandas>=3.0.1",
+    "requests>=2.32.5",
+    "soda-core-contracts>=3.5.6",
+    "soda-core-postgres>=3.5.6",
+]
