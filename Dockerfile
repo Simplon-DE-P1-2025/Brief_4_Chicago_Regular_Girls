@@ -19,8 +19,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 5. Repasser sur l'utilisateur astro pour la sécurité
-USER astro
-
 # 6. Installation des dépendances Python
 # On copie d'abord uniquement les fichiers de dépendances pour optimiser le cache Docker
 COPY pyproject.toml uv.lock ./
@@ -28,3 +26,4 @@ COPY pyproject.toml uv.lock ./
 # Installation via uv
 # On utilise --no-cache pour réduire la taille de l'image finale
 RUN uv pip install --no-cache -r pyproject.toml
+USER astro
