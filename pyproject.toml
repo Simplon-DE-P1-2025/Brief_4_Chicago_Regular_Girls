@@ -5,8 +5,8 @@ description = "Pipeline Airflow pour les crimes de Chicago avec Soda et Postgres
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "apache-airflow-providers-http>=6.0.0",
-    "apache-airflow-providers-postgres>=6.6.0",
+    "apache-airflow-providers-http>=4.0.0,<5.0.0",
+    "apache-airflow-providers-postgres>=5.0.0,<6.0.0",
     "pandas>=3.0.1",
     "requests>=2.32.5",
     "soda-core-contracts>=3.5.6",
