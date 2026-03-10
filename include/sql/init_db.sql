@@ -4,8 +4,9 @@ CREATE SCHEMA IF NOT EXISTS silver;
 
 -- 2. Création de la table 'raw' pour les données brutes
 
-CREATE TABLE IF NOT EXISTS raw_chicago_crimes (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS raw.raw_chicago_crimes (
+    id SERIAL PRIMARY KEY,        -- Ton ID unique géré par Postgres
+    chicago_id INTEGER,
     case_number VARCHAR(20),
     date TIMESTAMP,
     block VARCHAR(255),

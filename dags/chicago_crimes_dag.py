@@ -1,7 +1,7 @@
 from airflow.decorators import dag, task
 from airflow.providers.postgres.operators.postgres import PostgresOperator # L'import clé
 from datetime import datetime
-from include.scripts.ingestion import ingest_chicago_data
+from include.etl.ingestion import ingest_chicago_data
 
 @dag(
     schedule_interval='@daily',

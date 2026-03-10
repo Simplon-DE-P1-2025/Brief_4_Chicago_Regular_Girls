@@ -5,10 +5,15 @@ description = "Pipeline Airflow pour les crimes de Chicago avec Soda et Postgres
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "apache-airflow-providers-http>=4.0.0,<5.0.0",
-    "apache-airflow-providers-postgres>=5.0.0,<6.0.0",
-    "pandas>=3.0.1",
-    "requests>=2.32.5",
-    "soda-core-contracts>=3.5.6",
-    "soda-core-postgres>=3.5.6",
+    "apache-airflow-providers-postgres",
+    "apache-airflow-providers-openlineage>=1.8.0",
+    "pandas",
+    "sqlalchemy",
+    "psycopg2-binary",
+    "asyncpg",          # Garde-le, c'est pour la paix sociale avec Airflow 2.10
+    "soda-core-postgres"
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
