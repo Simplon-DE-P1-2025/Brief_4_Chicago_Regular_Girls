@@ -1,0 +1,34 @@
+# SODA Check #2 — Données transformées (chicago_crimes_clean)
+# Exécuté après la transformation SQL
+
+checks for chicago_crimes_clean:
+
+  - row_count between 1000 and 25000:
+      name: "Volume post-transform cohérent"
+
+  - missing_count(id) = 0:
+      name: "Pas d'ID manquant"
+
+  - duplicate_count(id) = 0:
+      name: "Pas de doublons"
+
+  - missing_count(primary_type) = 0:
+      name: "Type de crime toujours présent"
+
+  - missing_count(latitude) = 0:
+      name: "Latitude présente"
+
+  - missing_count(longitude) = 0:
+      name: "Longitude présente"
+
+  - min(latitude) >= 41.6:
+      name: "Latitude min dans bornes Chicago"
+
+  - max(latitude) <= 42.1:
+      name: "Latitude max dans bornes Chicago"
+
+  - min(longitude) >= -87.95:
+      name: "Longitude min dans bornes Chicago"
+
+  - max(longitude) <= -87.5:
+      name: "Longitude max dans bornes Chicago"
