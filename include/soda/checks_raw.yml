@@ -1,0 +1,22 @@
+# SODA Check #1 — Données brutes
+# Database : chicago_crimes / Schema : raw / Table : raw_chicago_crimes
+
+checks for raw_chicago_crimes:
+
+  - row_count > 0:
+      name: "Table non vide"
+
+  - row_count > 1000:
+      name: "Volume suffisant"
+
+  - missing_count(id) = 0:
+      name: "Pas d'ID manquant"
+
+  - duplicate_count(id) = 0:
+      name: "IDs uniques"
+
+  - missing_count(date) = 0:
+      name: "Date toujours présente"
+
+  - missing_count(primary_type) < 500:
+      name: "Type de crime majoritairement présent"
