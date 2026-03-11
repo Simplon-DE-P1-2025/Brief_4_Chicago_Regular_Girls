@@ -26,3 +26,20 @@ CREATE TABLE IF NOT EXISTS raw.raw_chicago_crimes (
     latitude DOUBLE PRECISION,
     longitude DOUBLE PRECISION
 );
+
+CREATE TABLE IF NOT EXISTS silver.chicago_crimes_clean (
+    id INTEGER PRIMARY KEY,
+    case_number VARCHAR(20),
+    crime_date TIMESTAMP,
+    primary_type VARCHAR(100),
+    description VARCHAR(255),
+    location_description VARCHAR(255),
+    arrest BOOLEAN,
+    domestic BOOLEAN,
+    district VARCHAR(10),
+    community_area INTEGER,
+    latitude DOUBLE PRECISION,
+    longitude DOUBLE PRECISION,
+    year INTEGER,
+    loaded_at TIMESTAMP
+);
