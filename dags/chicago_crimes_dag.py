@@ -79,7 +79,7 @@ data_source chicago_pg:
   database: {conn.schema}
   username: {conn.login}
   password: {conn.password}
-  schema: clean
+  schema: silver
 """)
 
         scan.add_sodacl_yaml_str(open('/usr/local/airflow/include/soda/checks_clean.yml').read())
